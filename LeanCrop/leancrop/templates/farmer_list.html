@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>leancrop | Farmers</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <style>
+      table {
+          border-collapse: collapse;
+          border-spacing: 0;
+          width: 100%;
+          border: 1px solid #ddd;
+      }
+
+      th, td {
+          text-align: left;
+          padding: 8px;
+      }
+
+      tr:nth-child(even){background-color: #f2f2f2}
+    </style>
+  </head>
+  <body>
+    {# <a href="{% url 'products:product_create' %}" class='btn btn-info btn-block'>Add New Inventory (Click Here..)</a><br> #}
+    <br>
+    <div class="container">
+      <a href="{% url 'farmer:farm_list' %}" class="btn btn-default btn-lg">View Farm's List</a>
+      <a href="{% url 'farmer:schedule_list' %}" class="btn btn-default btn-lg">View Schedule List</a>
+    </div>
+
+    <h1> <div class="container">FARMERS List:</div> </h1> <br> <br>
+    <div style="overflow-x:auto;">
+    <table>
+    <tr>
+      <th>Farmer id</th>
+      <th>Farmer Data</th>
+      <th>Phone Number</th>
+      <th>Language</th>
+    </tr>
+    {% for i in farmers %}
+    <tr>
+      <th>{{ i.id }}</th>
+      <th> {{ i.name }}</th>
+      <th> {{ i.phone_number }}</th>
+      <th> {{ i.language }}</th>
+    </tr>
+    {% endfor %}
+    </table>
+    </div>
+  </body>
+</html>

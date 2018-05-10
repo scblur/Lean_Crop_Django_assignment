@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>leancrop | Farm</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <style>
+      table {
+          border-collapse: collapse;
+          border-spacing: 0;
+          width: 100%;
+          border: 1px solid #ddd;
+      }
+
+      th, td {
+          text-align: left;
+          padding: 8px;
+      }
+
+      tr:nth-child(even){background-color: #f2f2f2}
+    </style>
+  </head>
+  <body>
+    <h1> <div class="container">FARMS List:</div> </h1> <br> <br>
+    <div style="overflow-x:auto;">
+    <table>
+    <tr>
+      <th>Farm id</th>
+      <th>Farmer Name</th>
+      <th>Farm Area</th>
+      <th>Farm Village</th>
+      <th>Crop Grown</th>
+      <th>Sowing Date</th>
+    </tr>
+    {% for i in farms %}
+    <tr>
+      <th>{{ i.id }}</th>
+      <th>{{ i.farmer }}</th>
+      <th> {{ i.area }}</th>
+      <th> {{ i.village }}</th>
+      <th> {{ i.crop_grown }}</th>
+      <th> {{ i.sowing_date }}</th>
+    </tr>
+    {% endfor %}
+    </table>
+    </div>
+  </body>
+</html>
